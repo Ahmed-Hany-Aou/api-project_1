@@ -16,6 +16,11 @@ Route::delete('/categories/{category}',[CategoryController::class, 'destroy']);
 
 Route::post('/categories',[CategoryController::class,'store']);
 
+Route::patch('/categories/{category}', [CategoryController::class, 'update']);
+
+
+
+
 
 
 /*

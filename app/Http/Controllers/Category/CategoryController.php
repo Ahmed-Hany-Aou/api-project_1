@@ -55,7 +55,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+         // Validate the incoming request data
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',  // Ensure the name is a required string and maximum length is 255
+        'description' => 'nullable|string|max:1000'  // Ensure the description is optional, a string, and max length is 1000
+    ]);
+
+    // Update the category with validated data
+    $category->update($validatedData);
+
+    // Return a JSON response with the updated category data
+    return response()->json($category);
     }
 
     /**
