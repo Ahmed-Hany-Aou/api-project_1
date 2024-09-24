@@ -14,7 +14,7 @@ Route::get('/categories/{category}',[CategoryController::class, 'show']);
 
 Route::delete('/categories/{category}',[CategoryController::class, 'destroy']);
 
-
+Route::post('/categories',[CategoryController::class,'store']);
 
 
 
