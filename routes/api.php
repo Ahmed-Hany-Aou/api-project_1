@@ -12,6 +12,8 @@ Route::get('/user', function (Request $request) {
 Route::get('/categories',[CategoryController::class, 'index']);
 Route::get('/categories/{category}',[CategoryController::class, 'show']);
 
+Route::delete('/categories/{category}',[CategoryController::class, 'destroy']);
+
 
 
 
