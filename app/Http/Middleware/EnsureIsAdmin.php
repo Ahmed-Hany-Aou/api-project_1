@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class EnsureIsAdmin
 {
     public function handle(Request $request, Closure $next)
@@ -16,4 +17,5 @@ class EnsureIsAdmin
 
         return response()->json(['message' => 'Unauthorized. Access restricted to admins only.'], 403);
     }
+    
 }
